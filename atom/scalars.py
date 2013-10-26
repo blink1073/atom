@@ -19,8 +19,7 @@ class Value(Member):
     """
     __slots__ = ()
 
-    def __init__(self, default=None, factory=None, args=None, kwargs=None,
-                 strict=True):
+    def __init__(self, default=None, factory=None):
         """ Initialize a Value.
 
         Parameters
@@ -144,9 +143,12 @@ class Int(Value):
     """
     __slots__ = ()
 
-    def __init__(self, default=0, factory=None):
+    def __init__(self, default=0, factory=None, strict=False):
         super(Int, self).__init__(default, factory)
-        self.set_validate_mode(Validate.Int, None)
+        if strict:
+            self.set_validate_mode(Validate.Int, None)
+        else:
+            self._set_coerced(int, factory=factory, default=default)
 
 
 class Long(Value):
@@ -172,7 +174,7 @@ class Range(Value):
     """
     __slots__ = ()
 
-    def __init__(self, low=None, high=None, value=None):
+    def __init__(self, low=None, high=None, value=None, strict=True):
         if low is not None and high is not None and low > high:
             low, high = high, low
         default = 0
@@ -183,7 +185,23 @@ class Range(Value):
         elif high is not None:
             default = high
         super(Range, self).__init__(default)
-        self.set_validate_mode(Validate.Range, (low, high))
+        if strict:
+            self.set_validate_mode(Validate.Range, (low, high))
+        else:
+            self._set_coerced(int, default=default)
+
+
+class Array(Value):
+    """ An value of type `numpy.ndarray`
+
+    """
+    __slots__ = ()
+
+    def __init__(self, default=None, args=None, kwargs=None, factory=None):
+        import numpy as np
+        super(Array, self).__init__(default, factory)
+        self._set_coerced(np.ndarray, default=default, factory=factory,
+                          args=args, kwargs=kwargs, coercer=np.array)
 
 
 class Float(Value):
@@ -209,9 +227,12 @@ class Str(Value):
     """
     __slots__ = ()
 
-    def __init__(self, default='', factory=None):
+    def __init__(self, default='', factory=None, strict=False):
         super(Str, self).__init__(default, factory)
-        self.set_validate_mode(Validate.Str, None)
+        if strict:
+            self.set_validate_mode(Validate.Str, None)
+        else:
+            self._set_coerced(str, factory=factory, default=default)
 
 
 class Unicode(Value):
