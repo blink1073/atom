@@ -306,11 +306,6 @@ class AtomMeta(type):
                     msg += 'instantiated: "{1} = {2}" should be "{1} = {2}()"'
                     raise TypeError(msg.format(cls.__name__, key,
                                                value.__name__))
-            elif cls.__name__ != 'Atom':
-                if not key in ['__slots__', '__module__']:
-                    msg = 'In class "{}.{}": Atom members must be of type'
-                    msg += ' atom.Member'
-                    raise TypeError(msg.format(cls.__name__, key))
 
         # Add the special statically defined behaviors for the members.
         # If the target member is defined on a subclass, it is cloned
