@@ -5,7 +5,7 @@
 |
 | The full license is in the file COPYING.txt, distributed with this software.
 |----------------------------------------------------------------------------*/
-#include <iostream>
+#include <limits>
 #include "member.h"
 #include "atomlist.h"
 
@@ -207,6 +207,31 @@ int_handler( Member* member, CAtom* atom, PyObject* oldvalue, PyObject* newvalue
 
 
 static PyObject*
+int_promote_handler( Member* member, CAtom* atom, PyObject* oldvalue, PyObject* newvalue )
+{
+    if( PyInt_Check( newvalue ) )
+        return newref( newvalue );
+    if( PyFloat_Check( newvalue ) ) {
+        double value = PyFloat_AS_DOUBLE( newvalue );
+        if( value < static_cast<double>( std::numeric_limits<long>::min() ) ||
+            value > static_cast<double>( std::numeric_limits<long>::max() ) )
+        {
+            PyErr_SetString( PyExc_OverflowError, "Python float too large to convert to C long" );
+            return 0;
+        }
+        return PyInt_FromLong( static_cast<long>( value ) );
+    }
+    if( PyLong_Check( newvalue ) ) {
+        long value = PyLong_AsLong( newvalue );
+        if( value == -1 && PyErr_Occurred() )
+            return 0;
+        return PyInt_FromLong( value );
+    }
+    return validate_type_fail( member, atom, newvalue, "int float or long" );
+}
+
+
+static PyObject*
 long_handler( Member* member, CAtom* atom, PyObject* oldvalue, PyObject* newvalue )
 {
     if( PyLong_Check( newvalue ) )
@@ -244,10 +269,10 @@ float_promote_handler( Member* member, CAtom* atom, PyObject* oldvalue, PyObject
         return PyFloat_FromDouble( static_cast<double>( PyInt_AS_LONG( newvalue ) ) );
     if( PyLong_Check( newvalue ) )
     {
-        double val = PyLong_AsDouble( newvalue );
-        if( val < 0.0 && PyErr_Occurred() )
+        double value = PyLong_AsDouble( newvalue );
+        if( value == -1.0 && PyErr_Occurred() )
             return 0;
-        return PyFloat_FromDouble( val );
+        return PyFloat_FromDouble( value );
     }
     return validate_type_fail( member, atom, newvalue, "float" );
 }
@@ -258,6 +283,17 @@ str_handler( Member* member, CAtom* atom, PyObject* oldvalue, PyObject* newvalue
 {
     if( PyString_Check( newvalue ) )
         return newref( newvalue );
+    return validate_type_fail( member, atom, newvalue, "str" );
+}
+
+
+static PyObject*
+str_promote_handler( Member* member, CAtom* atom, PyObject* oldvalue, PyObject* newvalue )
+{
+    if( PyString_Check( newvalue ) )
+        return newref( newvalue );
+    if( PyUnicode_Check( newvalue ) )
+        return PyUnicode_AsUTF8String( newvalue );
     return validate_type_fail( member, atom, newvalue, "str" );
 }
 
@@ -647,11 +683,13 @@ handlers[] = {
     no_op_handler,
     bool_handler,
     int_handler,
+    int_promote_handler,
     long_handler,
     long_promote_handler,
     float_handler,
     float_promote_handler,
     str_handler,
+    str_promote_handler,
     unicode_handler,
     unicode_promote_handler,
     tuple_handler,
