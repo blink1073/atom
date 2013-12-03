@@ -1,0 +1,243 @@
+
+
+  
+  
+ 
+  
+ 
+
+
+<!DOCTYPE html>
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>atom.list &mdash; Atom 0.3.5 documentation</title>
+    
+    <link rel="stylesheet" href="../_static/basic.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootswatch/3.0.0/cosmo/bootstrap.min.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/bootstrap-sphinx.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '0.3.5',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <script type="text/javascript" src="../_static/js/jquery-1.9.1.min.js"></script>
+    <script type="text/javascript" src="../_static/js/jquery-fix.js"></script>
+    <script type="text/javascript" src="../_static/bootstrap-3.0.0/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="../_static/bootstrap-sphinx.js"></script>
+    <link rel="top" title="Atom 0.3.5 documentation" href="../index.html" />
+    <link rel="up" title="API Reference" href="index.html" />
+    <link rel="next" title="atom.property" href="property.html" />
+    <link rel="prev" title="atom.intenum" href="intenum.html" />
+  
+<meta charset='utf-8'>
+<meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
+<meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1'>
+<meta name="apple-mobile-web-app-capable" content="yes">
+
+  <link rel="stylesheet" href="../_static/enamldoc.css" type="text/css" />
+  <script type="text/javascript" src="../_static/enamldoc.js"></script>
+
+  </head>
+  <body>
+  
+  
+
+
+  <div id="navbar" class="navbar navbar-default navbar-fixed-top">
+    <div class="container">
+      <div class="navbar-header">
+        <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".nav-collapse">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="../index.html">Atom</a>
+        <span class="navbar-text navbar-version pull-left"><b>0.3.5</b></span>
+      </div>
+
+        <div class="collapse navbar-collapse nav-collapse">
+          <ul class="nav navbar-nav">
+            <li class="divider-vertical"></li>
+            
+            
+              <li class="dropdown globaltoc-container">
+  <a href="../index.html"
+     class="dropdown-toggle"
+     data-toggle="dropdown">Site <b class="caret"></b></a>
+  <ul class="dropdown-menu globaltoc"
+    ><ul>
+<li class="toctree-l1"><a class="reference internal" href="../get_started/index.html">Getting Started</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../dev_guides/index.html">Developer Guides</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../arch_ref/index.html">Architecture Reference</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../faqs/index.html">FAQs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../examples/index.html">Examples</a></li>
+<li class="toctree-l1"><a class="reference internal" href="index.html">API Reference</a></li>
+</ul>
+</ul>
+</li>
+              
+                <li class="dropdown">
+  <a href="#" class="dropdown-toggle" data-toggle="dropdown">Page <b class="caret"></b></a>
+  <ul class="dropdown-menu localtoc"><ul>
+<li><a class="reference internal" href="#">atom.list</a></li>
+</ul>
+</ul>
+</li>
+              
+            
+            
+            
+    <li><a href="../genindex.html", title="Index">Index</a></li>
+
+            
+              <li>
+<div id="sourcelink">
+  <a href="../_sources/api_ref/list.txt"
+     rel="nofollow">Source</a>
+</div></li>
+            
+          </ul>
+
+          
+            
+<form class="navbar-form navbar-right" action="../search.html" method="get">
+ <div class="form-group">
+  <input type="text" name="q" class="form-control" placeholder="Search" />
+ </div>
+  <input type="hidden" name="check_keywords" value="yes" />
+  <input type="hidden" name="area" value="default" />
+</form>
+          
+        </div>
+    </div>
+  </div>
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-3">
+      <div id="enamldoc-sidebar" class="enamldoc-sidenav" role="complementary"><ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../get_started/index.html">Getting Started</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../dev_guides/index.html">Developer Guides</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../arch_ref/index.html">Architecture Reference</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../faqs/index.html">FAQs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../examples/index.html">Examples</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">API Reference</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="coerced.html">coerced</a></li>
+<li class="toctree-l2"><a class="reference internal" href="containerlist.html">containerlist</a></li>
+<li class="toctree-l2"><a class="reference internal" href="delegator.html">delegator</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dict.html">dict</a></li>
+<li class="toctree-l2"><a class="reference internal" href="enum.html">enum</a></li>
+<li class="toctree-l2"><a class="reference internal" href="event.html">event</a></li>
+<li class="toctree-l2"><a class="reference internal" href="instance.html">instance</a></li>
+<li class="toctree-l2"><a class="reference internal" href="intenum.html">intenum</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="">list</a></li>
+<li class="toctree-l2"><a class="reference internal" href="property.html">property</a></li>
+<li class="toctree-l2"><a class="reference internal" href="scalars.html">scalars</a></li>
+<li class="toctree-l2"><a class="reference internal" href="signal.html">signal</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tuple.html">tuple</a></li>
+<li class="toctree-l2"><a class="reference internal" href="typed.html">typed</a></li>
+<li class="toctree-l2"><a class="reference internal" href="version.html">version</a></li>
+</ul>
+</li>
+</ul>
+
+      </div>
+    </div>
+  
+
+    <div class="col-md-9">
+      
+  <span class="target" id="module-atom.list"></span><div class="section" id="atom-list">
+<h1>atom.list<a class="headerlink" href="#atom-list" title="Permalink to this headline">¶</a></h1>
+<dl class="class">
+<dt id="atom.list.List">
+<em class="property">class </em><tt class="descclassname">atom.list.</tt><tt class="descname">List</tt><big>(</big><em>item=None</em>, <em>default=None</em><big>)</big><a class="reference internal" href="../_modules/atom/list.html#List"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#atom.list.List" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <tt class="xref py py-class docutils literal"><span class="pre">atom.catom.Member</span></tt></p>
+<p>A member which allows list values.</p>
+<p>Assigning to a list creates a copy. The orginal list will remain
+unmodified. This is similar to the semantics of the assignment
+operator on the C++ STL container classes.</p>
+<dl class="method">
+<dt id="atom.list.List.__init__">
+<tt class="descname">__init__</tt><big>(</big><em>item=None</em>, <em>default=None</em><big>)</big><a class="reference internal" href="../_modules/atom/list.html#List.__init__"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#atom.list.List.__init__" title="Permalink to this definition">¶</a></dt>
+<dd><p>Initialize a List.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters :</th><td class="field-body"><p class="first"><strong>item</strong> : Member, type, or tuple of types, optional</p>
+<blockquote>
+<div><p>A member to use for validating the types of items allowed in
+the list. This can also be a type object or a tuple of types,
+in which case it will be wrapped with an Instance member. If
+this is not given, no item validation is performed.</p>
+</div></blockquote>
+<p><strong>default</strong> : list, optional</p>
+<blockquote class="last">
+<div><p>The default list of values. A new copy of this list will be
+created for each atom instance.</p>
+</div></blockquote>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="atom.list.List.set_name">
+<tt class="descname">set_name</tt><big>(</big><em>name</em><big>)</big><a class="reference internal" href="../_modules/atom/list.html#List.set_name"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#atom.list.List.set_name" title="Permalink to this definition">¶</a></dt>
+<dd><p>Set the name of the member.</p>
+<p>This method ensures that the item member name is also updated.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="atom.list.List.set_index">
+<tt class="descname">set_index</tt><big>(</big><em>index</em><big>)</big><a class="reference internal" href="../_modules/atom/list.html#List.set_index"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#atom.list.List.set_index" title="Permalink to this definition">¶</a></dt>
+<dd><p>Assign the index to this member.</p>
+<p>This method ensures that the item member index is also updated.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="atom.list.List.clone">
+<tt class="descname">clone</tt><big>(</big><big>)</big><a class="reference internal" href="../_modules/atom/list.html#List.clone"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#atom.list.List.clone" title="Permalink to this definition">¶</a></dt>
+<dd><p>Create a clone of the list.</p>
+<p>This will clone the internal list item if one is in use.</p>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+
+
+    </div>
+      
+  </div>
+</div>
+<footer class="footer">
+  <div class="container">
+    <p class="pull-right">
+      <a href="#">Back to top</a>
+      
+    </p>
+    <p>
+        &copy; Copyright 2013, Nucleic Development Team.<br/>
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.1.3.<br/>
+    </p>
+  </div>
+</footer>
+  </body>
+</html>

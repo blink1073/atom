@@ -1,0 +1,26 @@
+Employee Example
+===============================================================================
+
+:download:`employee.py <../../../examples/tutorial/employee.py>`
+
+::
+
+    Employee Tutorial.
+    
+    This tutorial shows how we can build more complex behavior using Atom objects.
+
+::
+
+ $ python employee.py
+
+.. literalinclude:: ../../../examples/tutorial/employee.py
+    :language: python
+
+
+Output:
+
+.. code-block:: python
+      
+    received new phone number for Mary: (100, 100, 100)
+    Mary Sue is 50 years old.
+    

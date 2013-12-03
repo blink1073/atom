@@ -1,0 +1,25 @@
+Person Example
+===============================================================================
+
+:download:`person.py <../../../examples/tutorial/person.py>`
+
+::
+
+    Person Tutorial.
+    
+    This tutorial demonstrates some of the behavior of Atom objects.
+
+::
+
+ $ python person.py
+
+.. literalinclude:: ../../../examples/tutorial/person.py
+    :language: python
+
+
+Output:
+
+.. code-block:: python
+      
+    John Doe is 43 years old.
+    

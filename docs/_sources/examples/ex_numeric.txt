@@ -1,0 +1,26 @@
+Numeric Example
+===============================================================================
+
+:download:`numeric.py <../../../examples/api/numeric.py>`
+
+::
+
+    Demonstrate the numeric Atom members: Int, Long, Float, and Bool.
+
+::
+
+ $ python numeric.py
+
+.. literalinclude:: ../../../examples/api/numeric.py
+    :language: python
+
+
+Output:
+
+.. code-block:: python
+      
+    1
+    2147483648
+    1500000.0
+    False
+    

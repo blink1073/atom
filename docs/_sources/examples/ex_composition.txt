@@ -1,0 +1,42 @@
+Composition Example
+===============================================================================
+
+:download:`composition.py <../../../examples/api/composition.py>`
+
+::
+
+    Demonstrate the use of Composition of Atom objects.
+    
+    1. If the class has not been declared, use a ForwardTyped
+       - Note the use of lambda, because "Person" is not yet defined
+    
+    2. A Typed object can be instantiated three ways:
+       - Provide args, kwargs, or a factory in the definition
+       - Provide a _default_* static constructor
+       - Provide a pre-created object in the constructor
+
+::
+
+ $ python composition.py
+
+.. literalinclude:: ../../../examples/api/composition.py
+    :language: python
+
+
+Output:
+
+.. code-block:: python
+      
+    Fido
+    name: Fido
+    owner: Bob Smith
+    
+    Fluffy
+    name: Fluffy
+    original owner: None
+    new owner: Bob Smith
+    
+    New Dog
+    name: Scruffy
+    owner: Bob Smith
+    

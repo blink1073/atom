@@ -1,0 +1,30 @@
+Default Value Example
+===============================================================================
+
+:download:`default_value.py <../../../examples/api/default_value.py>`
+
+::
+
+    Demonstrate all the ways to initialize a value of an Atom object.
+    
+    1. Pass the value directly
+    2. Assign the default value explicitly
+    3. Provide the value during initialization of the object
+    4. Provide factory callable that returns a value
+    5. Use a _default_* static method
+
+::
+
+ $ python default_value.py
+
+.. literalinclude:: ../../../examples/api/default_value.py
+    :language: python
+
+
+Output:
+
+.. code-block:: python
+      
+    (u'Bob', u'Little', 40)
+    Maude Little
+    

@@ -1,0 +1,30 @@
+Observe Example
+===============================================================================
+
+:download:`observe.py <../../../examples/api/observe.py>`
+
+::
+
+    Demonstrate the observe behavior of Atom objects.
+
+::
+
+ $ python observe.py
+
+.. literalinclude:: ../../../examples/api/observe.py
+    :language: python
+
+
+Output:
+
+.. code-block:: python
+      
+    Age changed: 40
+    Name changed: Robert Paulson
+    Name changed: Bobby Paulson
+    Age changed: 50
+    Dog name changed: Scruffy
+    Age changed: 51
+    Watcher func change: 51
+    Age changed: 52
+    

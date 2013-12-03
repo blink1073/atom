@@ -1,0 +1,286 @@
+
+
+  
+  
+ 
+  
+ 
+
+
+<!DOCTYPE html>
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>atom.enum &mdash; Atom 0.3.5 documentation</title>
+    
+    <link rel="stylesheet" href="../_static/basic.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootswatch/3.0.0/cosmo/bootstrap.min.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/bootstrap-sphinx.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '0.3.5',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <script type="text/javascript" src="../_static/js/jquery-1.9.1.min.js"></script>
+    <script type="text/javascript" src="../_static/js/jquery-fix.js"></script>
+    <script type="text/javascript" src="../_static/bootstrap-3.0.0/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="../_static/bootstrap-sphinx.js"></script>
+    <link rel="top" title="Atom 0.3.5 documentation" href="../index.html" />
+    <link rel="up" title="API Reference" href="index.html" />
+    <link rel="next" title="atom.event" href="event.html" />
+    <link rel="prev" title="atom.dict" href="dict.html" />
+  
+<meta charset='utf-8'>
+<meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
+<meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1'>
+<meta name="apple-mobile-web-app-capable" content="yes">
+
+  <link rel="stylesheet" href="../_static/enamldoc.css" type="text/css" />
+  <script type="text/javascript" src="../_static/enamldoc.js"></script>
+
+  </head>
+  <body>
+  
+  
+
+
+  <div id="navbar" class="navbar navbar-default navbar-fixed-top">
+    <div class="container">
+      <div class="navbar-header">
+        <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".nav-collapse">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="../index.html">Atom</a>
+        <span class="navbar-text navbar-version pull-left"><b>0.3.5</b></span>
+      </div>
+
+        <div class="collapse navbar-collapse nav-collapse">
+          <ul class="nav navbar-nav">
+            <li class="divider-vertical"></li>
+            
+            
+              <li class="dropdown globaltoc-container">
+  <a href="../index.html"
+     class="dropdown-toggle"
+     data-toggle="dropdown">Site <b class="caret"></b></a>
+  <ul class="dropdown-menu globaltoc"
+    ><ul>
+<li class="toctree-l1"><a class="reference internal" href="../get_started/index.html">Getting Started</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../dev_guides/index.html">Developer Guides</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../arch_ref/index.html">Architecture Reference</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../faqs/index.html">FAQs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../examples/index.html">Examples</a></li>
+<li class="toctree-l1"><a class="reference internal" href="index.html">API Reference</a></li>
+</ul>
+</ul>
+</li>
+              
+                <li class="dropdown">
+  <a href="#" class="dropdown-toggle" data-toggle="dropdown">Page <b class="caret"></b></a>
+  <ul class="dropdown-menu localtoc"><ul>
+<li><a class="reference internal" href="#">atom.enum</a></li>
+</ul>
+</ul>
+</li>
+              
+            
+            
+            
+    <li><a href="../genindex.html", title="Index">Index</a></li>
+
+            
+              <li>
+<div id="sourcelink">
+  <a href="../_sources/api_ref/enum.txt"
+     rel="nofollow">Source</a>
+</div></li>
+            
+          </ul>
+
+          
+            
+<form class="navbar-form navbar-right" action="../search.html" method="get">
+ <div class="form-group">
+  <input type="text" name="q" class="form-control" placeholder="Search" />
+ </div>
+  <input type="hidden" name="check_keywords" value="yes" />
+  <input type="hidden" name="area" value="default" />
+</form>
+          
+        </div>
+    </div>
+  </div>
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-3">
+      <div id="enamldoc-sidebar" class="enamldoc-sidenav" role="complementary"><ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../get_started/index.html">Getting Started</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../dev_guides/index.html">Developer Guides</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../arch_ref/index.html">Architecture Reference</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../faqs/index.html">FAQs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../examples/index.html">Examples</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">API Reference</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="coerced.html">coerced</a></li>
+<li class="toctree-l2"><a class="reference internal" href="containerlist.html">containerlist</a></li>
+<li class="toctree-l2"><a class="reference internal" href="delegator.html">delegator</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dict.html">dict</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="">enum</a></li>
+<li class="toctree-l2"><a class="reference internal" href="event.html">event</a></li>
+<li class="toctree-l2"><a class="reference internal" href="instance.html">instance</a></li>
+<li class="toctree-l2"><a class="reference internal" href="intenum.html">intenum</a></li>
+<li class="toctree-l2"><a class="reference internal" href="list.html">list</a></li>
+<li class="toctree-l2"><a class="reference internal" href="property.html">property</a></li>
+<li class="toctree-l2"><a class="reference internal" href="scalars.html">scalars</a></li>
+<li class="toctree-l2"><a class="reference internal" href="signal.html">signal</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tuple.html">tuple</a></li>
+<li class="toctree-l2"><a class="reference internal" href="typed.html">typed</a></li>
+<li class="toctree-l2"><a class="reference internal" href="version.html">version</a></li>
+</ul>
+</li>
+</ul>
+
+      </div>
+    </div>
+  
+
+    <div class="col-md-9">
+      
+  <span class="target" id="module-atom.enum"></span><div class="section" id="atom-enum">
+<h1>atom.enum<a class="headerlink" href="#atom-enum" title="Permalink to this headline">¶</a></h1>
+<dl class="class">
+<dt id="atom.enum.Enum">
+<em class="property">class </em><tt class="descclassname">atom.enum.</tt><tt class="descname">Enum</tt><big>(</big><em>*items</em><big>)</big><a class="reference internal" href="../_modules/atom/enum.html#Enum"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#atom.enum.Enum" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <tt class="xref py py-class docutils literal"><span class="pre">atom.catom.Member</span></tt></p>
+<p>A member where the value can be one in a sequence of items.</p>
+<dl class="method">
+<dt id="atom.enum.Enum.__init__">
+<tt class="descname">__init__</tt><big>(</big><em>*items</em><big>)</big><a class="reference internal" href="../_modules/atom/enum.html#Enum.__init__"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#atom.enum.Enum.__init__" title="Permalink to this definition">¶</a></dt>
+<dd><p>Initialize an Enum.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters :</th><td class="field-body"><p class="first"><strong>*items</strong> :</p>
+<blockquote class="last">
+<div><p>The allowed values which can be assigned to the enum.</p>
+</div></blockquote>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="atom.enum.Enum.items">
+<tt class="descname">items</tt><a class="reference internal" href="../_modules/atom/enum.html#Enum.items"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#atom.enum.Enum.items" title="Permalink to this definition">¶</a></dt>
+<dd><p>A readonly property which returns the items in the enum.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="atom.enum.Enum.added">
+<tt class="descname">added</tt><big>(</big><em>*items</em><big>)</big><a class="reference internal" href="../_modules/atom/enum.html#Enum.added"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#atom.enum.Enum.added" title="Permalink to this definition">¶</a></dt>
+<dd><p>Create a clone of the Enum with added items.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters :</th><td class="field-body"><p class="first"><strong>*items</strong> :</p>
+<blockquote>
+<div><p>Additional items to include in the Enum.</p>
+</div></blockquote>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns :</th><td class="field-body"><p class="first"><strong>result</strong> : Enum</p>
+<blockquote class="last">
+<div><p>A new enum object which contains all of the original items
+plus the new items.</p>
+</div></blockquote>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="atom.enum.Enum.removed">
+<tt class="descname">removed</tt><big>(</big><em>*items</em><big>)</big><a class="reference internal" href="../_modules/atom/enum.html#Enum.removed"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#atom.enum.Enum.removed" title="Permalink to this definition">¶</a></dt>
+<dd><p>Create a clone of the Enum with some items removed.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters :</th><td class="field-body"><p class="first"><strong>*items</strong> :</p>
+<blockquote>
+<div><p>The items to remove remove from the new enum.</p>
+</div></blockquote>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns :</th><td class="field-body"><p class="first"><strong>result</strong> : Enum</p>
+<blockquote class="last">
+<div><p>A new enum object which contains all of the original items
+but with the given items removed.</p>
+</div></blockquote>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="atom.enum.Enum.__call__">
+<tt class="descname">__call__</tt><big>(</big><em>item</em><big>)</big><a class="reference internal" href="../_modules/atom/enum.html#Enum.__call__"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#atom.enum.Enum.__call__" title="Permalink to this definition">¶</a></dt>
+<dd><p>Create a clone of the Enum item with a new default.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters :</th><td class="field-body"><p class="first"><strong>item</strong> : object</p>
+<blockquote class="last">
+<div><p>The item to use as the Enum default. The item must be one
+of the valid enum items.</p>
+</div></blockquote>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+
+
+    </div>
+      
+  </div>
+</div>
+<footer class="footer">
+  <div class="container">
+    <p class="pull-right">
+      <a href="#">Back to top</a>
+      
+    </p>
+    <p>
+        &copy; Copyright 2013, Nucleic Development Team.<br/>
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.1.3.<br/>
+    </p>
+  </div>
+</footer>
+  </body>
+</html>

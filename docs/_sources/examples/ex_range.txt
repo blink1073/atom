@@ -1,0 +1,26 @@
+Range Example
+===============================================================================
+
+:download:`range.py <../../../examples/api/range.py>`
+
+::
+
+    Demonstrate the Range and FloatRange Atom Members.
+
+::
+
+ $ python range.py
+
+.. literalinclude:: ../../../examples/api/range.py
+    :language: python
+
+
+Output:
+
+.. code-block:: python
+      
+    0.0
+    0.5
+    10
+    99
+    

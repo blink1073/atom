@@ -1,0 +1,29 @@
+Containers Example
+===============================================================================
+
+:download:`containers.py <../../../examples/api/containers.py>`
+
+::
+
+    Demonstrate the use of List, ContainerList, Tuple and Dict Atom Members.
+
+::
+
+ $ python containers.py
+
+.. literalinclude:: ../../../examples/api/containers.py
+    :language: python
+
+
+Output:
+
+.. code-block:: python
+      
+    [1, 2, 3]
+    container list change: [1, 2, 3]
+    [1, 2, 3]
+    container list change: [1, 2, 3, 1]
+    container list change: [2, 3, 1]
+    (5, 4, 3)
+    {'foo': 1, 'bar': 'a'}
+    

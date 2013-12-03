@@ -1,0 +1,33 @@
+Coersion Example
+===============================================================================
+
+:download:`coersion.py <../../../examples/api/coersion.py>`
+
+::
+
+    Demonstrate the use of Coersion Atom Members.
+
+::
+
+ $ python coersion.py
+
+.. literalinclude:: ../../../examples/api/coersion.py
+    :language: python
+
+
+Output:
+
+.. code-block:: python
+      
+    CInt Demo
+    1
+    51
+    
+    CFloat Demo
+    1.5
+    100.0
+    
+    CStr Demo
+    100
+    <class '__main__.Demo'>
+    

@@ -1,0 +1,307 @@
+
+
+  
+  
+ 
+  
+ 
+
+
+<!DOCTYPE html>
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>atom.delegator &mdash; Atom 0.3.5 documentation</title>
+    
+    <link rel="stylesheet" href="../../_static/basic.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootswatch/3.0.0/cosmo/bootstrap.min.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/bootstrap-sphinx.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../',
+        VERSION:     '0.3.5',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <script type="text/javascript" src="../../_static/js/jquery-1.9.1.min.js"></script>
+    <script type="text/javascript" src="../../_static/js/jquery-fix.js"></script>
+    <script type="text/javascript" src="../../_static/bootstrap-3.0.0/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="../../_static/bootstrap-sphinx.js"></script>
+    <link rel="top" title="Atom 0.3.5 documentation" href="../../index.html" />
+    <link rel="up" title="Module code" href="../index.html" />
+  
+<meta charset='utf-8'>
+<meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
+<meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1'>
+<meta name="apple-mobile-web-app-capable" content="yes">
+
+  <link rel="stylesheet" href="../../_static/enamldoc.css" type="text/css" />
+  <script type="text/javascript" src="../../_static/enamldoc.js"></script>
+
+  </head>
+  <body>
+  
+  
+
+
+  <div id="navbar" class="navbar navbar-default navbar-fixed-top">
+    <div class="container">
+      <div class="navbar-header">
+        <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".nav-collapse">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="../../index.html">Atom</a>
+        <span class="navbar-text navbar-version pull-left"><b>0.3.5</b></span>
+      </div>
+
+        <div class="collapse navbar-collapse nav-collapse">
+          <ul class="nav navbar-nav">
+            <li class="divider-vertical"></li>
+            
+            
+              <li class="dropdown globaltoc-container">
+  <a href="../../index.html"
+     class="dropdown-toggle"
+     data-toggle="dropdown">Site <b class="caret"></b></a>
+  <ul class="dropdown-menu globaltoc"
+    ><ul>
+<li class="toctree-l1"><a class="reference internal" href="../../get_started/index.html">Getting Started</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../dev_guides/index.html">Developer Guides</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../arch_ref/index.html">Architecture Reference</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../faqs/index.html">FAQs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../examples/index.html">Examples</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../api_ref/index.html">API Reference</a></li>
+</ul>
+</ul>
+</li>
+              
+                <li class="dropdown">
+  <a href="#" class="dropdown-toggle" data-toggle="dropdown">Page <b class="caret"></b></a>
+  <ul class="dropdown-menu localtoc"></ul>
+</li>
+              
+            
+            
+            
+    <li><a href="../../genindex.html", title="Index">Index</a></li>
+
+            
+              <li></li>
+            
+          </ul>
+
+          
+            
+<form class="navbar-form navbar-right" action="../../search.html" method="get">
+ <div class="form-group">
+  <input type="text" name="q" class="form-control" placeholder="Search" />
+ </div>
+  <input type="hidden" name="check_keywords" value="yes" />
+  <input type="hidden" name="area" value="default" />
+</form>
+          
+        </div>
+    </div>
+  </div>
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-3">
+      <div id="enamldoc-sidebar" class="enamldoc-sidenav" role="complementary"><ul>
+<li class="toctree-l1"><a class="reference internal" href="../../get_started/index.html">Getting Started</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../dev_guides/index.html">Developer Guides</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../arch_ref/index.html">Architecture Reference</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../faqs/index.html">FAQs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../examples/index.html">Examples</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../api_ref/index.html">API Reference</a></li>
+</ul>
+
+      </div>
+    </div>
+  
+
+    <div class="col-md-9">
+      
+  <h1>Source code for atom.delegator</h1><div class="highlight"><pre>
+<span class="c">#------------------------------------------------------------------------------</span>
+<span class="c"># Copyright (c) 2013, Nucleic Development Team.</span>
+<span class="c">#</span>
+<span class="c"># Distributed under the terms of the Modified BSD License.</span>
+<span class="c">#</span>
+<span class="c"># The full license is in the file COPYING.txt, distributed with this software.</span>
+<span class="c">#------------------------------------------------------------------------------</span>
+<span class="kn">from</span> <span class="nn">.catom</span> <span class="kn">import</span> <span class="p">(</span>
+    <span class="n">Member</span><span class="p">,</span> <span class="n">PostGetAttr</span><span class="p">,</span> <span class="n">PostSetAttr</span><span class="p">,</span> <span class="n">DefaultValue</span><span class="p">,</span> <span class="n">Validate</span><span class="p">,</span> <span class="n">PostValidate</span>
+<span class="p">)</span>
+
+
+<div class="viewcode-block" id="Delegator"><a class="viewcode-back" href="../../api_ref/delegator.html#atom.delegator.Delegator">[docs]</a><span class="k">class</span> <span class="nc">Delegator</span><span class="p">(</span><span class="n">Member</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot; A member subclass which delegates all work to a wrapped member.</span>
+
+<span class="sd">    The only behaviors not delegated are GetAttr and SetAttr. Subclasses</span>
+<span class="sd">    should override behavior as needed to suit their needs. In order to</span>
+<span class="sd">    change a particular mode, the relevant change method must be called</span>
+<span class="sd">    via super(Delegator, ...).</span>
+
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">__slots__</span> <span class="o">=</span> <span class="s">&#39;delegate&#39;</span>
+
+<div class="viewcode-block" id="Delegator.__init__"><a class="viewcode-back" href="../../api_ref/delegator.html#atom.delegator.Delegator.__init__">[docs]</a>    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">delegate</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot; Initialize a DeclarativeProperty.</span>
+
+<span class="sd">        Parameters</span>
+<span class="sd">        ----------</span>
+<span class="sd">        delegate : Member</span>
+<span class="sd">            The Atom Member which provides the behavior for the property.</span>
+<span class="sd">            The member should use standard slot behavior semantics.</span>
+
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">delegate</span> <span class="o">=</span> <span class="n">delegate</span>
+        <span class="n">sup</span> <span class="o">=</span> <span class="nb">super</span><span class="p">(</span><span class="n">Delegator</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span>
+        <span class="n">sup</span><span class="o">.</span><span class="n">set_post_getattr_mode</span><span class="p">(</span><span class="n">PostGetAttr</span><span class="o">.</span><span class="n">Delegate</span><span class="p">,</span> <span class="n">delegate</span><span class="p">)</span>
+        <span class="n">sup</span><span class="o">.</span><span class="n">set_post_setattr_mode</span><span class="p">(</span><span class="n">PostSetAttr</span><span class="o">.</span><span class="n">Delegate</span><span class="p">,</span> <span class="n">delegate</span><span class="p">)</span>
+        <span class="n">sup</span><span class="o">.</span><span class="n">set_default_value_mode</span><span class="p">(</span><span class="n">DefaultValue</span><span class="o">.</span><span class="n">Delegate</span><span class="p">,</span> <span class="n">delegate</span><span class="p">)</span>
+        <span class="n">sup</span><span class="o">.</span><span class="n">set_validate_mode</span><span class="p">(</span><span class="n">Validate</span><span class="o">.</span><span class="n">Delegate</span><span class="p">,</span> <span class="n">delegate</span><span class="p">)</span>
+        <span class="n">sup</span><span class="o">.</span><span class="n">set_post_validate_mode</span><span class="p">(</span><span class="n">PostValidate</span><span class="o">.</span><span class="n">Delegate</span><span class="p">,</span> <span class="n">delegate</span><span class="p">)</span>
+</div>
+<div class="viewcode-block" id="Delegator.add_static_observer"><a class="viewcode-back" href="../../api_ref/delegator.html#atom.delegator.Delegator.add_static_observer">[docs]</a>    <span class="k">def</span> <span class="nf">add_static_observer</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">observer</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot; Add a static observer to the member.</span>
+
+<span class="sd">        This method also adds the static observer to the delegate.</span>
+
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="nb">super</span><span class="p">(</span><span class="n">Delegator</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="n">add_static_observer</span><span class="p">(</span><span class="n">observer</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">delegate</span><span class="o">.</span><span class="n">add_static_observer</span><span class="p">(</span><span class="n">observer</span><span class="p">)</span>
+</div>
+<div class="viewcode-block" id="Delegator.remove_static_observer"><a class="viewcode-back" href="../../api_ref/delegator.html#atom.delegator.Delegator.remove_static_observer">[docs]</a>    <span class="k">def</span> <span class="nf">remove_static_observer</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">observer</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot; Remove a static observer from the member.</span>
+
+<span class="sd">        This method also removes the static observer from the delegate.</span>
+
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="nb">super</span><span class="p">(</span><span class="n">Delegator</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="n">remove_static_observer</span><span class="p">(</span><span class="n">observer</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">delegate</span><span class="o">.</span><span class="n">remove_static_observer</span><span class="p">(</span><span class="n">observer</span><span class="p">)</span>
+</div>
+<div class="viewcode-block" id="Delegator.set_name"><a class="viewcode-back" href="../../api_ref/delegator.html#atom.delegator.Delegator.set_name">[docs]</a>    <span class="k">def</span> <span class="nf">set_name</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot; Assign the name to this member.</span>
+
+<span class="sd">        This method keeps the name of the delegate member in sync.</span>
+
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="nb">super</span><span class="p">(</span><span class="n">Delegator</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="n">set_name</span><span class="p">(</span><span class="n">name</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">delegate</span><span class="o">.</span><span class="n">set_name</span><span class="p">(</span><span class="n">name</span><span class="p">)</span>
+</div>
+<div class="viewcode-block" id="Delegator.set_index"><a class="viewcode-back" href="../../api_ref/delegator.html#atom.delegator.Delegator.set_index">[docs]</a>    <span class="k">def</span> <span class="nf">set_index</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">index</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot; Assign the index to this member.</span>
+
+<span class="sd">        This method keeps the index of the delegate member in sync.</span>
+
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="nb">super</span><span class="p">(</span><span class="n">Delegator</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="n">set_index</span><span class="p">(</span><span class="n">index</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">delegate</span><span class="o">.</span><span class="n">set_index</span><span class="p">(</span><span class="n">index</span><span class="p">)</span>
+</div>
+<div class="viewcode-block" id="Delegator.set_post_getattr_mode"><a class="viewcode-back" href="../../api_ref/delegator.html#atom.delegator.Delegator.set_post_getattr_mode">[docs]</a>    <span class="k">def</span> <span class="nf">set_post_getattr_mode</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">mode</span><span class="p">,</span> <span class="n">context</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot; Set the post getattr mode for the member.</span>
+
+<span class="sd">        This method proxies the change to the delegate member.</span>
+
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">delegate</span><span class="o">.</span><span class="n">set_post_getattr_mode</span><span class="p">(</span><span class="n">mode</span><span class="p">,</span> <span class="n">context</span><span class="p">)</span>
+</div>
+<div class="viewcode-block" id="Delegator.set_post_setattr_mode"><a class="viewcode-back" href="../../api_ref/delegator.html#atom.delegator.Delegator.set_post_setattr_mode">[docs]</a>    <span class="k">def</span> <span class="nf">set_post_setattr_mode</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">mode</span><span class="p">,</span> <span class="n">context</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot; Set the post getattr mode for the member.</span>
+
+<span class="sd">        This method proxies the change to the delegate member.</span>
+
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">delegate</span><span class="o">.</span><span class="n">set_post_setattr_mode</span><span class="p">(</span><span class="n">mode</span><span class="p">,</span> <span class="n">context</span><span class="p">)</span>
+</div>
+<div class="viewcode-block" id="Delegator.set_default_value_mode"><a class="viewcode-back" href="../../api_ref/delegator.html#atom.delegator.Delegator.set_default_value_mode">[docs]</a>    <span class="k">def</span> <span class="nf">set_default_value_mode</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">mode</span><span class="p">,</span> <span class="n">context</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot; Set the default value mode for the member.</span>
+
+<span class="sd">        This method proxies the change to the delegate member.</span>
+
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">delegate</span><span class="o">.</span><span class="n">set_default_value_mode</span><span class="p">(</span><span class="n">mode</span><span class="p">,</span> <span class="n">context</span><span class="p">)</span>
+</div>
+<div class="viewcode-block" id="Delegator.set_validate_mode"><a class="viewcode-back" href="../../api_ref/delegator.html#atom.delegator.Delegator.set_validate_mode">[docs]</a>    <span class="k">def</span> <span class="nf">set_validate_mode</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">mode</span><span class="p">,</span> <span class="n">context</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot; Set the default value mode for the member.</span>
+
+<span class="sd">        This method proxies the change to the delegate member.</span>
+
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">delegate</span><span class="o">.</span><span class="n">set_validate_mode</span><span class="p">(</span><span class="n">mode</span><span class="p">,</span> <span class="n">context</span><span class="p">)</span>
+</div>
+<div class="viewcode-block" id="Delegator.set_post_validate_mode"><a class="viewcode-back" href="../../api_ref/delegator.html#atom.delegator.Delegator.set_post_validate_mode">[docs]</a>    <span class="k">def</span> <span class="nf">set_post_validate_mode</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">mode</span><span class="p">,</span> <span class="n">context</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot; Set the default value mode for the member.</span>
+
+<span class="sd">        This method proxies the change to the delegate member.</span>
+
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">delegate</span><span class="o">.</span><span class="n">set_post_validate_mode</span><span class="p">(</span><span class="n">mode</span><span class="p">,</span> <span class="n">context</span><span class="p">)</span>
+</div>
+<div class="viewcode-block" id="Delegator.clone"><a class="viewcode-back" href="../../api_ref/delegator.html#atom.delegator.Delegator.clone">[docs]</a>    <span class="k">def</span> <span class="nf">clone</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot; Create a clone of the declarative property.</span>
+
+<span class="sd">        This method also creates a clone of the internal delegate for</span>
+<span class="sd">        mode handlers which use the original delegate as the context.</span>
+
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">clone</span> <span class="o">=</span> <span class="nb">super</span><span class="p">(</span><span class="n">Delegator</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="n">clone</span><span class="p">()</span>
+        <span class="n">delegate</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">delegate</span>
+        <span class="n">clone</span><span class="o">.</span><span class="n">delegate</span> <span class="o">=</span> <span class="n">delegate_clone</span> <span class="o">=</span> <span class="n">delegate</span><span class="o">.</span><span class="n">clone</span><span class="p">()</span>
+
+        <span class="n">mode</span><span class="p">,</span> <span class="n">old</span> <span class="o">=</span> <span class="n">clone</span><span class="o">.</span><span class="n">post_getattr_mode</span>
+        <span class="k">if</span> <span class="n">old</span> <span class="ow">is</span> <span class="n">delegate</span><span class="p">:</span>
+            <span class="n">clone</span><span class="o">.</span><span class="n">set_post_getattr_mode</span><span class="p">(</span><span class="n">mode</span><span class="p">,</span> <span class="n">delegate_clone</span><span class="p">)</span>
+
+        <span class="n">mode</span><span class="p">,</span> <span class="n">old</span> <span class="o">=</span> <span class="n">clone</span><span class="o">.</span><span class="n">post_setattr_mode</span>
+        <span class="k">if</span> <span class="n">old</span> <span class="ow">is</span> <span class="n">delegate</span><span class="p">:</span>
+            <span class="n">clone</span><span class="o">.</span><span class="n">set_post_setattr_mode</span><span class="p">(</span><span class="n">mode</span><span class="p">,</span> <span class="n">delegate_clone</span><span class="p">)</span>
+
+        <span class="n">mode</span><span class="p">,</span> <span class="n">old</span> <span class="o">=</span> <span class="n">clone</span><span class="o">.</span><span class="n">default_value_mode</span>
+        <span class="k">if</span> <span class="n">old</span> <span class="ow">is</span> <span class="n">delegate</span><span class="p">:</span>
+            <span class="n">clone</span><span class="o">.</span><span class="n">set_default_value_mode</span><span class="p">(</span><span class="n">mode</span><span class="p">,</span> <span class="n">delegate_clone</span><span class="p">)</span>
+
+        <span class="n">mode</span><span class="p">,</span> <span class="n">old</span> <span class="o">=</span> <span class="n">clone</span><span class="o">.</span><span class="n">validate_mode</span>
+        <span class="k">if</span> <span class="n">old</span> <span class="ow">is</span> <span class="n">delegate</span><span class="p">:</span>
+            <span class="n">clone</span><span class="o">.</span><span class="n">set_validate_mode</span><span class="p">(</span><span class="n">mode</span><span class="p">,</span> <span class="n">delegate_clone</span><span class="p">)</span>
+
+        <span class="n">mode</span><span class="p">,</span> <span class="n">old</span> <span class="o">=</span> <span class="n">clone</span><span class="o">.</span><span class="n">post_validate_mode</span>
+        <span class="k">if</span> <span class="n">old</span> <span class="ow">is</span> <span class="n">delegate</span><span class="p">:</span>
+            <span class="n">clone</span><span class="o">.</span><span class="n">set_post_validate_mode</span><span class="p">(</span><span class="n">mode</span><span class="p">,</span> <span class="n">delegate_clone</span><span class="p">)</span>
+
+        <span class="k">return</span> <span class="n">clone</span></div></div>
+</pre></div>
+
+    </div>
+      
+  </div>
+</div>
+<footer class="footer">
+  <div class="container">
+    <p class="pull-right">
+      <a href="#">Back to top</a>
+      
+    </p>
+    <p>
+        &copy; Copyright 2013, Nucleic Development Team.<br/>
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.1.3.<br/>
+    </p>
+  </div>
+</footer>
+  </body>
+</html>

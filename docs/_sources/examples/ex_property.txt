@@ -1,0 +1,25 @@
+Property Example
+===============================================================================
+
+:download:`property.py <../../../examples/api/property.py>`
+
+::
+
+    Demonstrate the Property Atom Member.
+
+::
+
+ $ python property.py
+
+.. literalinclude:: ../../../examples/api/property.py
+    :language: python
+
+
+Output:
+
+.. code-block:: python
+      
+    40
+    40
+    20
+    
